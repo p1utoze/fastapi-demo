@@ -14,4 +14,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY ./main.py /app/main.py
 
 # Start the FastAPI application with Gunicorn
+
 CMD ["gunicorn", "main:app", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8000"]
